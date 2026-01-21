@@ -4,9 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen 2 - Multimèdia i integració</title>
-    <style></style>
+    <style>
+        body{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgrey;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* Cards */
+
+        #card1{
+            width: 300px;
+            height: 400px;
+            background-color: lightslategrey;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s ease-in-out, transform 0.3s;
+        }   
+
+        #card1:hover{
+            background-color: grey;
+            transform: scale(1.1);
+            box-shadow: 1px 3px 3px 1px #555;
+            transition: 0.3s ease-in-out, box-shadow 0.3 ease;
+            
+        }
+
+        #card2{
+            width: 300px;
+            height: 400px;
+            background-color: lightsalmon;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s ease-in-out, transform 0.3s;
+        }
+
+        #card2:hover{
+            background-color: salmon;
+            transform: scale(1.1);
+            box-shadow: 1px 3px 3px 1px #555;
+            transition: 0.3s ease-in-out, box-shadow 0.3 ease;
+        }
+
+        #card3{
+            background-color: red;
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s ease-in-out, transform 0.3s;
+        }
+
+        #card3:hover{
+            background-color: crimson;
+            transform: scale(1.1);
+            box-shadow: 1px 3px 3px 1px #555;
+            transition: 0.3s ease-in-out, box-shadow 0.3 ease;
+        }
+
+
+
+        .cardGroup{
+            margin-top: 50px;
+            display: flex;
+            gap: 50px;
+            transition: ease-in-out;
+        }
+
+        
+
+        /* Circulo pulsación */
+
+        .circulo{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 100px;
+            margin-top: 100px;
+            margin-left: 100px;
+            animation: pulsacion 1.5s infinite ease-in-out;
+            transition: all 0.5 ease-in-out;
+        }
+
+        @keyframes pulsacion {
+            0%{transform: scale(1);}
+
+            50%{transform: scale(1.2);}
+
+            100%{transform: scale(1);}
+        }
+
+        /* lo puedo hacer con el 0% 50% 100% */
+
+        /* Spinner loading */
+
+        .loading{
+            width: 100px;
+            height: 100px;
+            border-top: 3px solid;
+            border-radius: 100px;
+            background-color: aquamarine;
+            transition: all 0.5s ease;
+            margin-top: 100px;
+            margin-left: 100px;
+            animation: rotarLoading 1.5s infinite linear;
+        }
+
+        @keyframes rotarLoading{
+            from{
+                transform: rotate(90deg);
+            }
+            to{
+                transform: rotate(-260deg);
+            }
+        }
+
+        .botonesAnimacion button{
+            width: 220px;
+            height: 50px;
+            margin-left: 50px;
+            margin-top: 40px;
+            border-radius: 10px;
+            border: 0px;
+        }
+
+        #btn1{
+            background-color:#3498db ;
+            color: white;
+            transition: 0.2s ease-in;
+        }
+
+        #btn1:hover{
+            background-color: #2980b9;
+            transition: 0.2s ease-out;
+        }
+
+        #btn2{
+            background-color:rgb(163, 58, 44) ;
+            color: white;
+            transition: transform 0.6s;
+        }
+
+        #btn2:active{
+            transform: rotate(360deg);
+        }
+
+        #btn3{
+            background-color:rgb(56, 179, 52) ;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        #btn3:hover{
+            transform: scale(1.2);
+        }
+
+        #btn3:active{
+            transform: scale(0.95);
+        }
+
+        #btn4{
+            background-color:rgb(199, 56, 199);
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        #btn4:hover{
+            transform: scale(1.1) rotate(5deg);
+            background-color:rgb(156, 31, 156)
+        }
+
+        .menu{
+            display: flex;
+            gap: 60px;
+            background-color: white;
+            margin-top: 80px;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .menu a{
+            list-style: none;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        
+
+
+    </style>
 </head>
 <body>
     <h1>Examen 2 - Multimèdia i integració</h1>
+
+    <div class="cardGroup">
+        
+        <div id="card1">
+            <h1>Card1</h1>
+        </div>
+        <div id="card2">
+            <h1>Card2</h1>
+        </div>
+        <div id="card3">
+            <h1>Card3</h1>
+        </div>
+
+    </div>
+
+
+    <div class="botonesAnimacion">
+        
+        <button id="btn1">TRANSICIÓ DE FONS</button>
+
+        <button id="btn2">ROTACIÓ AL CLIC</button>
+
+        <button id="btn3">ESCALA</button>
+
+        <button id="btn4">COMBINACIÓ</button>
+
+    </div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serveis</a>
+        <a href="#">Contacte</a>
+    </div>
+
+    
+    <div class="circulo"></div>
+
+    <div class="loading"></div>
+
 </body>
 </html>
